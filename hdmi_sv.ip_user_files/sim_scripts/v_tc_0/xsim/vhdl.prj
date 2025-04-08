@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../hdmi_sv.gen/sources_1/ip/v_tc_0/sim/v_tc_0.vhd" \
+
+# Do not sort compile order
+nosort

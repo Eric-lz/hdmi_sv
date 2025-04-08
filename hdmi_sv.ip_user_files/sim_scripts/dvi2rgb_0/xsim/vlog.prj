@@ -1,0 +1,8 @@
+verilog xil_defaultlib --include "../../../../hdmi_sv.gen/sources_1/ip/dvi2rgb_0/src/ila_pixclk/hdl/verilog" --include "../../../../hdmi_sv.gen/sources_1/ip/dvi2rgb_0/src/ila_refclk/hdl/verilog" \
+"../../../../hdmi_sv.gen/sources_1/ip/dvi2rgb_0/src/ila_pixclk/sim/ila_pixclk.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/dvi2rgb_0/src/ila_refclk/sim/ila_refclk.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

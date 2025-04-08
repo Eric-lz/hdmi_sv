@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_rgbser_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_rgbser" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="8,191,899.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="8,192,050.201 ns"></ZoomEndTime>
+      <Cursor1Time time="8,192,025.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="116"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject type="logic" fp_name="/tb_rgbser/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rgbser/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rgbser/uut/x_pos">
+      <obj_property name="ElementShortName">x_pos[9:0]</obj_property>
+      <obj_property name="ObjectShortName">x_pos[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rgbser/uut/y_pos">
+      <obj_property name="ElementShortName">y_pos[8:0]</obj_property>
+      <obj_property name="ObjectShortName">y_pos[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rgbser/hsync_out">
+      <obj_property name="ElementShortName">hsync_out</obj_property>
+      <obj_property name="ObjectShortName">hsync_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rgbser/vsync_out">
+      <obj_property name="ElementShortName">vsync_out</obj_property>
+      <obj_property name="ObjectShortName">vsync_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rgbser/vde_out">
+      <obj_property name="ElementShortName">vde_out</obj_property>
+      <obj_property name="ObjectShortName">vde_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rgbser/data_in">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rgbser/uut/p_x">
+      <obj_property name="ElementShortName">p_x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">p_x[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rgbser/uut/p_y">
+      <obj_property name="ElementShortName">p_y[8:0]</obj_property>
+      <obj_property name="ObjectShortName">p_y[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rgbser/uut/data_out">
+      <obj_property name="ElementShortName">data_out[23:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[23:0]</obj_property>
+   </wvobject>
+</wave_config>

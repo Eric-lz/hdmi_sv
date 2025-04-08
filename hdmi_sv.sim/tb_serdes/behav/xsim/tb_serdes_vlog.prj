@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../hdmi_sv.ip_user_files/ipstatic" \
+"../../../../hdmi_sv.srcs/sources_1/new/memory.sv" \
+"../../../../hdmi_sv.srcs/sources_1/new/rgb_deser.sv" \
+"../../../../hdmi_sv.srcs/sources_1/new/rgb_ser.sv" \
+"../../../../hdmi_sv.srcs/tb_serdes/imports/new/serdes.sv" \
+"../../../../hdmi_sv.srcs/tb_serdes/imports/new/tb_serdes.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

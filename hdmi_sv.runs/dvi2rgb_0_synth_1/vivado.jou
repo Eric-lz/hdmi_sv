@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.1 (64-bit)
+# SW Build 5266912 on Sun Dec 15 09:03:31 MST 2024
+# IP Build 5264866 on Sun Dec 15 16:27:47 MST 2024
+# SharedData Build 5264680 on Wed Dec 11 12:48:36 MST 2024
+# Start of session at: Fri Feb 21 15:23:48 2025
+# Process ID         : 33369
+# Current directory  : /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.runs/dvi2rgb_0_synth_1
+# Command line       : vivado -log dvi2rgb_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dvi2rgb_0.tcl
+# Log file           : /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.runs/dvi2rgb_0_synth_1/dvi2rgb_0.vds
+# Journal file       : /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.runs/dvi2rgb_0_synth_1/vivado.jou
+# Running On         : OptiPlex-4440118170
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-14500
+# CPU Frequency      : 3593.623 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16437 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20732 MB
+# Available Virtual  : 11750 MB
+#-----------------------------------------------------------
+source dvi2rgb_0.tcl -notrace

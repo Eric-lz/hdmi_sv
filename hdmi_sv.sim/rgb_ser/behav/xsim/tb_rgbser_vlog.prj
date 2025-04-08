@@ -1,0 +1,26 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../hdmi_sv.ip_user_files/ipstatic" \
+"../../../../hdmi_sv.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/dvi2rgb_0/src/ila_pixclk/sim/ila_pixclk.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/dvi2rgb_0/src/ila_refclk/sim/ila_refclk.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/v_tc_0/v_tc_0/demo_tb/axi4lite_mst.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/v_tc_0/v_tc_0/demo_tb/axi4s_video_slv.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/v_tc_0/v_tc_0/demo_tb/axi4s_video_mst.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/v_tc_0/v_tc_0/demo_tb/ce_generator.v" \
+"../../../../hdmi_sv.gen/sources_1/ip/v_tc_0/v_tc_0/demo_tb/tb_v_tc_0.v" \
+
+sv xil_defaultlib  --include "../../../../hdmi_sv.ip_user_files/ipstatic" \
+"../../../../hdmi_sv.srcs/sources_1/imports/new/filter_sv.sv" \
+"../../../../hdmi_sv.srcs/sources_1/new/top.sv" \
+"../../../../hdmi_sv.srcs/sources_1/new/memory.sv" \
+"../../../../hdmi_sv.srcs/sources_1/new/rgb_ser.sv" \
+"../../../../hdmi_sv.srcs/sources_1/new/rgb_deser.sv" \
+"../../../../hdmi_sv.srcs/sources_1/new/grayscale.sv" \
+"../../../../hdmi_sv.srcs/rgb_ser/new/tb_rgbser.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

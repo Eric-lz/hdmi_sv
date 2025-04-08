@@ -1,0 +1,26 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/DVI_Constants.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/ChannelBond.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/SyncAsync.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/GlitchFilter.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/TWI_SlaveCtl.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/EEPROM_8b.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/InputSERDES.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/PhaseAlign.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/ResyncToBUFG.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/SyncAsyncReset.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/SyncBase.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/TMDS_Clocking.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/TMDS_Decoder.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/dvi2rgb.vhd" \
+"../../../../hdmi_sv.gen/sources_1/ip/dvi2rgb_0/sim/dvi2rgb_0.vhd" \
+"../../../../hdmi_sv.gen/sources_1/ip/v_tc_0/sim/v_tc_0.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/ClockGen.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/OutputSERDES.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/TMDS_Encoder.vhd" \
+"../../../../hdmi_sv.ip_user_files/ipstatic/src/rgb2dvi.vhd" \
+"../../../../hdmi_sv.gen/sources_1/ip/rgb2dvi_0/sim/rgb2dvi_0.vhd" \
+
+# Do not sort compile order
+nosort
