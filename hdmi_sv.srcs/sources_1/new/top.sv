@@ -1,9 +1,9 @@
 // HDMI BRAM Framebuffer
 
 module top #(
-    parameter DATA_WIDTH = 24,
-    parameter WIDTH = 800,
-    parameter HEIGHT = 600
+    parameter DATA_WIDTH = 8,
+    parameter WIDTH = 1280,
+    parameter HEIGHT = 720
 )(
     // Clock
     input logic clk,
@@ -96,11 +96,11 @@ module top #(
     );
 
     // Grayscale converter
-//    wire [7:0] gray_out;
-//    grayscale gray (
-//        .rgb_in(vid_in),
-//        .gray_out(gray_out)
-//    );
+    wire [7:0] gray_out;
+    grayscale gray (
+        .rgb_in(vid_in),
+        .gray_out(gray_out)
+    );
 
     reg [23:0] ser_out;
     reg hsync_ser, vsync_ser;
@@ -115,7 +115,7 @@ module top #(
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) serdes (
-        .vid_in(vid_in),
+        .vid_in(gray_out),
         .pclk_in(pclk_in),
         .vsync_in(vsync_in),
         .vde_in(vde_in),

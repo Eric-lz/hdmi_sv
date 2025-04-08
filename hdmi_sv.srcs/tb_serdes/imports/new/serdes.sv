@@ -2,12 +2,6 @@ module serdes #(
     parameter DATA_WIDTH = 8,       // Pixel depth
     parameter WIDTH = 640,          // Line width
     parameter HEIGHT = 480         // Frame height
-    // parameter H_SYNC_WIDTH = 1,    // Horizontal sync pulse width
-    // parameter H_BACK_PORCH = 1,    // Horizontal back porch
-    // parameter H_FRONT_PORCH = 1,   // Horizontal front porch
-    // parameter V_SYNC_WIDTH = 1,     // Vertical sync pulse width
-    // parameter V_BACK_PORCH = 1,    // Vertical back porch
-    // parameter V_FRONT_PORCH = 1    // Vertical front porch
 )(
     // Video input (output from DVI2RGB)
     input logic [DATA_WIDTH-1:0] vid_in,
@@ -72,12 +66,6 @@ module serdes #(
         .DATA_WIDTH(DATA_WIDTH),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
-        // .H_SYNC_WIDTH(H_SYNC_WIDTH),
-        // .H_BACK_PORCH(H_BACK_PORCH),
-        // .H_FRONT_PORCH(H_FRONT_PORCH),
-        // .V_SYNC_WIDTH(V_SYNC_WIDTH),
-        // .V_BACK_PORCH(V_BACK_PORCH),
-        // .V_FRONT_PORCH(V_FRONT_PORCH)
     ) rgb_ser (
         .clk(pclk_in),
         .reset(reset),

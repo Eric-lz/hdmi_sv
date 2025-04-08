@@ -1,6 +1,6 @@
 // RGB deserializer
 // Takes image data and stores it into memory
-// Grabs one frame every time the run signal is high
+// Grabs one frame every time the start signal is high
 
 module rgb_deser #(
     parameter DATA_WIDTH = 8,
@@ -78,33 +78,5 @@ module rgb_deser #(
              end
          endcase
      end
-
-//    always_ff @(posedge pclk_in) begin
-//        if (start & ~running) begin
-//            p_x <= 0;
-//            p_y <= 0;
-//            running <= 1;
-//            we <= 1;
-//            done <= 0;
-//        end else begin
-//            if (running) begin
-//                we <= 1;
-//                data_out <= data_in;
-//                if (p_x == WIDTH-1) begin
-//                    p_x <= 0;
-//                    p_y <= p_y + 1;
-//                end else begin
-//                    p_x <= p_x + 1;
-//                end
-//                if (p_x == WIDTH-1 & p_y == HEIGHT-1) begin
-//                    we <= 0;
-//                    done <= 1;
-//                end
-//            end else begin
-//                we <= 0;
-//                data_out <= 0;
-//                done <= 1;
-//            end
-//        end
-//    end
+     
 endmodule

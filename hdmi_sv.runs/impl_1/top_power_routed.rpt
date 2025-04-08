@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2.1 (lin64) Build 5266912 Sun Dec 15 09:03:31 MST 2024
-| Date             : Tue Apr  8 16:19:29 2025
+| Date             : Tue Apr  8 17:24:56 2025
 | Host             : OptiPlex-4440118170 running 64-bit Ubuntu 24.04.2 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.621        |
+| Total On-Chip Power (W)  | 0.603        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.456        |
-| Device Static (W)        | 0.166        |
+| Dynamic (W)              | 0.439        |
+| Device Static (W)        | 0.164        |
 | Effective TJA (C/W)      | 3.3          |
-| Max Ambient (C)          | 82.9         |
-| Junction Temperature (C) | 27.1         |
+| Max Ambient (C)          | 83.0         |
+| Junction Temperature (C) | 27.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,24 +52,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.005 |        8 |       --- |             --- |
-| Slice Logic              |     0.008 |     2266 |       --- |             --- |
-|   LUT as Logic           |     0.007 |      961 |    133800 |            0.72 |
-|   Register               |    <0.001 |      771 |    267600 |            0.29 |
-|   CARRY4                 |    <0.001 |       18 |     33450 |            0.05 |
+| Clocks                   |     0.004 |        8 |       --- |             --- |
+| Slice Logic              |     0.007 |     2204 |       --- |             --- |
+|   LUT as Logic           |     0.006 |      945 |    133800 |            0.71 |
+|   Register               |    <0.001 |      745 |    267600 |            0.28 |
+|   CARRY4                 |    <0.001 |       27 |     33450 |            0.08 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
+|   F7/F8 Muxes            |    <0.001 |       32 |    133800 |            0.02 |
 |   LUT as Distributed RAM |    <0.001 |       24 |     46200 |            0.05 |
-|   Others                 |    <0.001 |      108 |       --- |             --- |
-|   F7/F8 Muxes            |    <0.001 |       24 |    133800 |            0.02 |
+|   Others                 |    <0.001 |      111 |       --- |             --- |
 |   BUFR                   |     0.000 |        1 |       160 |            0.63 |
-| Signals                  |     0.035 |     2151 |       --- |             --- |
-| Block RAM                |     0.010 |      264 |       365 |           72.33 |
+| Signals                  |     0.025 |     2087 |       --- |             --- |
+| Block RAM                |     0.004 |      232 |       365 |           63.56 |
 | MMCM                     |     0.062 |        1 |        10 |           10.00 |
 | PLL                      |     0.171 |        2 |        10 |           20.00 |
 | DSPs                     |     0.002 |        2 |       740 |            0.27 |
 | I/O                      |     0.164 |       32 |       285 |           11.23 |
-| Static Power             |     0.166 |          |           |                 |
-| Total                    |     0.621 |          |           |                 |
+| Static Power             |     0.164 |          |           |                 |
+| Total                    |     0.603 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,7 +79,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.112 |       0.074 |      0.038 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.095 |       0.057 |      0.038 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.169 |       0.139 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.045 |       0.040 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
@@ -88,7 +88,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.008 |       0.001 |      0.007 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.007 |       0.000 |      0.006 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -153,26 +153,27 @@ Table of Contents
 +--------------------------------------+-----------+
 | Name                                 | Power (W) |
 +--------------------------------------+-----------+
-| top                                  |     0.456 |
+| top                                  |     0.439 |
 |   clk_wiz                            |     0.110 |
 |     inst                             |     0.110 |
-|   dvi2rgb                            |     0.101 |
-|     U0                               |     0.101 |
-|       DataDecoders[0].DecoderX       |     0.011 |
-|       DataDecoders[1].DecoderX       |     0.011 |
-|       DataDecoders[2].DecoderX       |     0.011 |
+|   dvi2rgb                            |     0.103 |
+|     U0                               |     0.103 |
+|       DataDecoders[0].DecoderX       |     0.012 |
+|       DataDecoders[1].DecoderX       |     0.012 |
+|       DataDecoders[2].DecoderX       |     0.012 |
 |       GenerateDDC.DDC_EEPROM         |     0.002 |
 |       TMDS_ClockingX                 |     0.065 |
-|   rgb2dvi                            |     0.197 |
-|     U0                               |     0.197 |
+|   rgb2dvi                            |     0.196 |
+|     U0                               |     0.196 |
 |       ClockGenInternal.ClockGenX     |     0.062 |
 |       ClockSerializer                |     0.033 |
 |       DataEncoders[0].DataSerializer |     0.033 |
+|       DataEncoders[1].DataEncoder    |     0.001 |
 |       DataEncoders[1].DataSerializer |     0.033 |
 |       DataEncoders[2].DataSerializer |     0.033 |
-|   serdes                             |     0.047 |
-|     memory                           |     0.045 |
-|     rgb_deser                        |     0.001 |
+|   serdes                             |     0.029 |
+|     memory                           |     0.027 |
+|     rgb_deser                        |     0.002 |
 +--------------------------------------+-----------+
 
 

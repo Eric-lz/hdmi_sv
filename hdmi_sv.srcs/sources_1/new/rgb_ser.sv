@@ -1,9 +1,9 @@
 // RGB Serializer
 // Takes image data from memory and sends it pixel by pixel
 
-`define VGA640
-//`define GRAYSCALE
-//`define HD720
+//`define VGA640
+`define GRAYSCALE
+`define HD720
 
 module rgb_ser #(
     parameter DATA_WIDTH = 8,       // Pixel depth
