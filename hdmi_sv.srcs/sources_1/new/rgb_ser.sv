@@ -3,7 +3,7 @@
 
 // Video timings
 // Uncomment at least one
-`define GRAYSCALE
+//`define GRAYSCALE
 //`define VGA640
 //`define SVGA800
 `define HD720

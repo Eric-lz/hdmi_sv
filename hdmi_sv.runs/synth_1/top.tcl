@@ -79,7 +79,6 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.srcs/sources_1/new/grayscale.sv
   /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.srcs/sources_1/new/memory.sv
   /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.srcs/sources_1/new/rgb_deser.sv
   /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.srcs/sources_1/new/rgb_ser.sv

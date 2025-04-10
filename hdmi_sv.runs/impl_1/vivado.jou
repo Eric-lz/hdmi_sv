@@ -3,8 +3,8 @@
 # SW Build 5266912 on Sun Dec 15 09:03:31 MST 2024
 # IP Build 5264866 on Sun Dec 15 16:27:47 MST 2024
 # SharedData Build 5264680 on Wed Dec 11 12:48:36 MST 2024
-# Start of session at: Thu Apr 10 14:56:53 2025
-# Process ID         : 638523
+# Start of session at: Thu Apr 10 16:36:10 2025
+# Process ID         : 946466
 # Current directory  : /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.runs/impl_1
 # Command line       : vivado -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
 # Log file           : /home/ericp/nexysvideo/hdmi_sv/hdmi_sv.runs/impl_1/top.vdi
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-14500
-# CPU Frequency      : 799.564 MHz
+# CPU Frequency      : 800.000 MHz
 # CPU Physical cores : 14
 # CPU Logical cores  : 20
 # Host memory        : 16437 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 25027 MB
-# Available Virtual  : 16941 MB
+# Available Virtual  : 16712 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
