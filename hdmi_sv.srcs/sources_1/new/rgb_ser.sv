@@ -1,12 +1,16 @@
 // RGB Serializer
 // Takes image data from memory and sends it pixel by pixel
 
-//`define VGA640
+// Video timings
+// Uncomment at least one
 `define GRAYSCALE
+//`define VGA640
+//`define SVGA800
 `define HD720
+//`define CUSTOM
 
 module rgb_ser #(
-    parameter DATA_WIDTH = 8,       // Pixel depth
+    parameter DATA_WIDTH = 8,      // Pixel depth
     parameter WIDTH = 640,         // Line width
     parameter HEIGHT = 480         // Frame height
 
@@ -21,25 +25,43 @@ module rgb_ser #(
     `endif
     `ifdef VGA640
         ,
-        parameter H_FRONT_PORCH = 16,  // Horizontal front porch
+        parameter H_FRONT_PORCH = 16,   // Horizontal front porch
         parameter H_SYNC_WIDTH = 96,    // Horizontal sync pulse width
-        parameter H_BACK_PORCH = 48,   // Horizontal back porch
-        parameter V_FRONT_PORCH = 10,    // Vertical front porch
+        parameter H_BACK_PORCH = 48,    // Horizontal back porch
+        parameter V_FRONT_PORCH = 10,   // Vertical front porch
         parameter V_SYNC_WIDTH = 2,     // Vertical sync pulse width
         parameter V_BACK_PORCH = 33     // Vertical back porch
     `endif
+    `ifdef SVGA800
+        ,
+        parameter H_FRONT_PORCH = 40,   // Horizontal front porch
+        parameter H_SYNC_WIDTH = 128,    // Horizontal sync pulse width
+        parameter H_BACK_PORCH = 88,    // Horizontal back porch
+        parameter V_FRONT_PORCH = 1,   // Vertical front porch
+        parameter V_SYNC_WIDTH = 4,     // Vertical sync pulse width
+        parameter V_BACK_PORCH = 23     // Vertical back porch
+    `endif
+    `ifdef CUSTOM
+        ,
+        parameter H_FRONT_PORCH = 1,   // Horizontal front porch
+        parameter H_SYNC_WIDTH = 1,    // Horizontal sync pulse width
+        parameter H_BACK_PORCH = 1,    // Horizontal back porch
+        parameter V_FRONT_PORCH = 1,   // Vertical front porch
+        parameter V_SYNC_WIDTH = 1,    // Vertical sync pulse width
+        parameter V_BACK_PORCH = 1     // Vertical back porch
+    `endif
 )(
-    input logic clk,                // Clock input
-    input logic reset,              // Active-high reset
-    input logic [DATA_WIDTH-1:0] data_in, // Data from the framebuffer (BRAM)
+    input logic clk,                        // Clock input
+    input logic reset,                      // Active-high reset
+    input logic [DATA_WIDTH-1:0] data_in,   // Data from the framebuffer (BRAM)
     
-    output logic [23:0] data_out,     // Serialized pixel data output
-    output logic hsync_out,                // Horizontal sync signal
-    output logic vsync_out,                // Vertical sync signal
-    output logic pclk_out,
-    output logic vde_out,                  // Video data enable
-    output logic [$clog2(WIDTH):0] p_x,   // Pixel X coordinate
-    output logic [$clog2(HEIGHT):0] p_y    // Pixel Y coordinate
+    output logic [23:0] data_out,           // Serialized pixel data output
+    output logic hsync_out,                 // Horizontal sync signal
+    output logic vsync_out,                 // Vertical sync signal
+    output logic pclk_out,                  // Pixel clock
+    output logic vde_out,                   // Active video
+    output logic [$clog2(WIDTH):0] p_x,     // Read X address
+    output logic [$clog2(HEIGHT):0] p_y     // Read Y address
 );
 
     // Internal signal to track pixel position
@@ -94,9 +116,7 @@ module rgb_ser #(
             if ((x_pos < H_ACTIVE_VIDEO) && (y_pos < V_ACTIVE_VIDEO)) begin
                 vde_reg <= 1;
                 `ifdef GRAYSCALE
-                    data_out[23:16] <= data_in;
-                    data_out[15:8] <= data_in;
-                    data_out[7:0] <= data_in;
+                    data_out <= {data_in, data_in, data_in};
                 `else
                     data_out <= data_in;
                 `endif
@@ -128,8 +148,6 @@ module rgb_ser #(
     end
 
     // Assign outputs
-//    assign p_x = x_pos;
-//    assign p_y = y_pos;
     assign hsync_out = hsync_reg;
     assign vsync_out = vsync_reg;
     assign vde_out = vde_reg;

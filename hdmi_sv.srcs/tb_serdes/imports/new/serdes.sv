@@ -11,7 +11,8 @@ module serdes #(
     input logic start,
     input logic reset,
 
-    output logic [DATA_WIDTH-1:0] vid_out,
+    // Video output (input to RGB2DVI)
+    output logic [23:0] vid_out,
     output logic hsync_out,
     output logic vsync_out,
     output logic vde_out,

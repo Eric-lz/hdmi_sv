@@ -30,6 +30,7 @@ module top #(
     // Switches
     input logic [7:0] sw,
     
+    // Center button
     input logic btnc
 );
 
@@ -48,19 +49,25 @@ module top #(
         .clk_in1(clk)       // input clk_in1
     );
 
+    // HDMI DDC signals
     wire hdmi_rx_scl_i, hdmi_rx_scl_o, hdmi_rx_scl_t;
     wire hdmi_rx_sda_i, hdmi_rx_sda_o, hdmi_rx_sda_t;
-
     IOBUF hdmi_rx_scl_iobuf
        (.I(hdmi_rx_scl_o),
         .IO(hdmi_rx_scl),
         .O(hdmi_rx_scl_i),
-        .T(hdmi_rx_scl_t));
+        .T(hdmi_rx_scl_t)
+    );
     IOBUF hdmi_rx_sda_iobuf
        (.I(hdmi_rx_sda_o),
         .IO(hdmi_rx_sda),
         .O(hdmi_rx_sda_i),
-        .T(hdmi_rx_sda_t));
+        .T(hdmi_rx_sda_t)
+    );
+    
+    // HDMI HPA
+    assign hdmi_rx_txen = 1;
+    assign hdmi_rx_hpa = 1;
 
     // Video input (output from DVI2RGB)
     wire [23:0] vid_in;
@@ -101,15 +108,14 @@ module top #(
         .rgb_in(vid_in),
         .gray_out(gray_out)
     );
-
+    
+    // Serializer output (BRAM)
     reg [23:0] ser_out;
     reg hsync_ser, vsync_ser;
     reg vde_ser, pclk_ser;
     
-    reg [23:0] vid_out;
-    reg hsync_out, vsync_out;
-    reg vde_out, pclk_out;
-    
+    // Serializer/Deserializer wrapper
+    // Writes frame into BRAM and outputs its contents
     serdes #(
         .DATA_WIDTH(DATA_WIDTH),
         .WIDTH(WIDTH),
@@ -129,6 +135,11 @@ module top #(
         .led(led[0])
     );
     
+    // Output to RGB2DVI
+    reg [23:0] vid_out;
+    reg hsync_out, vsync_out;
+    reg vde_out, pclk_out;
+    
     // HDMI bypass
     always_ff @(pclk_in or pclk_ser) begin
         if(sw[0])begin
@@ -146,6 +157,7 @@ module top #(
         end
     end
 
+    // RGB to DVI
     rgb2dvi_0 rgb2dvi (
         .TMDS_Clk_p(hdmi_tx_clk_p),     // output wire TMDS_Clk_p
         .TMDS_Clk_n(hdmi_tx_clk_n),     // output wire TMDS_Clk_n
@@ -158,8 +170,5 @@ module top #(
         .vid_pVSync(vsync_out),      // input wire vid_pVSync
         .PixelClk(pclk_out)           // input wire PixelClk
     );
-
-    assign hdmi_rx_txen = 1;
-    assign hdmi_rx_hpa = 1;
     
 endmodule
