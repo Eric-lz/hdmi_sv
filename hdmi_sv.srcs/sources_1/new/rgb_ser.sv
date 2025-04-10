@@ -3,11 +3,13 @@
 
 // Video timings
 // Uncomment at least one
-//`define GRAYSCALE
 //`define VGA640
 //`define SVGA800
 `define HD720
 //`define CUSTOM
+
+// Grayscale (8-bit) or color (24-bit)
+//`define GRAYSCALE
 
 module rgb_ser #(
     parameter DATA_WIDTH = 8,      // Pixel depth
@@ -115,11 +117,11 @@ module rgb_ser #(
             // Video data enable (vde) logic: Enable only during active video
             if ((x_pos < H_ACTIVE_VIDEO) && (y_pos < V_ACTIVE_VIDEO)) begin
                 vde_reg <= 1;
-                `ifdef GRAYSCALE
-                    data_out <= {data_in, data_in, data_in};
-                `else
-                    data_out <= data_in;
-                `endif
+`ifdef GRAYSCALE
+                data_out <= {data_in, data_in, data_in};
+`else
+                data_out <= data_in;
+`endif
             end else begin
                 vde_reg <= 0;
                 data_out <= 0; // No valid data outside of active video area

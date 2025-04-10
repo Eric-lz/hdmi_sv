@@ -1,5 +1,11 @@
 // HDMI BRAM Framebuffer
 
+/// Grayscale (8-bit) or color (24-bit)
+// GRAYSCALE has to be defined in rgb_ser.sv also
+//`define GRAYSCALE
+
+// Resolution timings must be set in rgb_ser.sv
+
 module top #(
     parameter DATA_WIDTH = 24,
     parameter WIDTH = 800,
@@ -103,12 +109,14 @@ module top #(
     );
 
     // Grayscale converter
-//    wire [7:0] gray_out;
-//    grayscale gray (
-//        .rgb_in(vid_in),
-//        .gray_out(gray_out)
-//    );
-    
+`ifdef GRAYSCALE
+    wire [7:0] gray_out;
+    grayscale gray (
+        .rgb_in(vid_in),
+        .gray_out(gray_out)
+    );
+`endif
+
     // Serializer output (BRAM)
     reg [23:0] ser_out;
     reg hsync_ser, vsync_ser;
@@ -121,7 +129,11 @@ module top #(
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) serdes (
+`ifdef GRAYSCALE
+        .vid_in(gray_out),
+`else
         .vid_in(vid_in),
+`endif
         .pclk_in(pclk_in),
         .vsync_in(vsync_in),
         .vde_in(vde_in),
